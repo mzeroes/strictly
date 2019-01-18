@@ -1,0 +1,65 @@
+          {this.state.error.message ? (
+          <Text style={{ color: colors.errorBackground }}>{this.state.error.message}</Text>
+        ) : (<Text />)
+        }
+        <TextInput
+          style={styles.textInput}
+          autoCapitalize="none"
+          placeholder="Email"
+          onChangeText={inputEmail => this.setState({ inputEmail })}
+          value={this.state.inputEmail}
+        />
+        <TextInput
+          secureTextEntry
+          style={styles.textInput}
+          autoCapitalize="none"
+          placeholder="Password"
+          onChangeText={inputPassword => this.setState({ inputPassword })}
+          value={this.state.inputPassword}
+        />
+        <TouchableOpacity
+          onPress={() => { this.signupFire(); }}
+          style={styles.touchableButton}
+        >
+          <Text style={styles.linkText}>Signup</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => { this.loginFire(); }}
+          style={styles.touchableButton}
+        >
+          <Text style={styles.linkText}>Log In</Text>
+        </TouchableOpacity>
+        <View style={styles.infoContainer}>
+          <Text>{this.state.response}</Text>
+          <Text>{this.state.user.uid}</Text>
+          <Text>{this.state.user.name}</Text>
+          <Text>{this.state.user.email}</Text>
+          <Text>{this.state.user.photo}</Text>
+          <Text>{this.state.inputEmail}</Text>
+          <Text>{this.state.inputPassword}</Text>
+        </View>
+        <TouchableOpacity
+          onPress={() => { this.verifyEmail(); }}
+          style={styles.touchableButton}
+        >
+          <Text style={styles.linkText}>verifyEmail</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => { this.getUser(); }}
+          style={styles.touchableButton}
+        >
+          <Text style={styles.linkText}>GetUser Info</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => { this.signOutUser(); }}
+          style={styles.touchableButton}
+        >
+          <Text style={styles.linkText}>signOutUser</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => { this.clearErrorMessage(); }}
+          style={styles.touchableButton}
+        >
+          <Text style={styles.linkText}>clearErrorMessage</Text>
+        </TouchableOpacity>
